@@ -1,1 +1,1 @@
-Write-Host "fact_powershell=true"
+Write-Host "fact_powershell=test"
