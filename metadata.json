@@ -4,8 +4,8 @@
   "author": "Example",
   "license": "Apache-2.0",
   "summary": "Set of example custom facts",
-  "source": "https://github.com/gregloughmiller2/tse-custom-facts",
-  "project_page": "https://github.com/gregloughmiller2/tse-custom-facts",
+  "source": "https://github.com/gregloughmiller2/example-custom-facts",
+  "project_page": "https://github.com/gregloughmiller2/example-custom-facts",
   "dependencies": [
   ]
 }
