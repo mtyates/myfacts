@@ -1,16 +1,24 @@
 #!/usr/bin/ruby
 #
 #
-# Written to work out the version of windows that the client is currently being run on.
-#
+
 Facter.add('fact_registry') do
-  confine :osfamily => :windows
-  setcode do
-    value = nil
-    Win32::Registry::HKEY_LOCAL_MACHINE.open('Software\Puppet Labs\Puppet') do |regkey|
-      value = regkey['RememberInstallDir']
+  confine :kernel => :windows
+  
+  fact_registry = 'unknown'
+  begin
+    
+    if RUBY_PLATFORM.downcase.include?('mswin') or RUBY_PLATFORM.downcase.include?('mingw32')
+      require 'win32/registry'
+    
+      Win32::Registry::HKEY_LOCAL_MACHINE.open('Software\Puppet Labs\Puppet') do |regkey|
+         fact_registry = regkey['RememberInstallDir']
+      end
     end
-    value
+  rescue
+  end
+
+  setcode do
+    fact_registry
   end
 end
-
