@@ -3,13 +3,13 @@
 # Notes:
 #   None
 require 'facter'
-Facter.add('greg') do
-  uname_result = nil
+Facter.add('custom_fact_Registry') do
+  confine :osfamily => :windows
   setcode do
-    if Facter::Util::Resolution.which('uname')
-      uname_cmd = '/bin/hostname -a'
-      uname_result = Facter::Util::Resolution.exec(uname_cmd)
+    value = nil
+    Win32::Registry::HKEY_LOCAL_MACHINE.open('SOFTWARE\Microsoft\Windows NT\CurrentVersion') do |regkey|
+      value = regkey['EditionID']
     end
-    uname_result
+    value
   end
 end
