@@ -7,8 +7,8 @@ Facter.add('fact_Registry') do
   confine :osfamily => :windows
   setcode do
     value = nil
-    Win32::Registry::HKEY_LOCAL_MACHINE.open('SOFTWARE\Microsoft\Windows NT\CurrentVersion') do |regkey|
-      value = regkey['EditionID']
+    Win32::Registry::HKEY_LOCAL_MACHINE.open('SOFTWARE\Puppet Labs\Puppet\RememberInstallDir') do |regkey|
+      value = regkey['RememberInstallDir']
     end
     value
   end
