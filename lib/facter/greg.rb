@@ -2,9 +2,9 @@
 #
 # Notes:
 #   None
-require 'facter'
-Facter.add('fact_Registry') do
-  confine :osfamily => :windows
+### require 'facter'
+Facter.add('fact_registry') do
+###  confine :osfamily => :windows
   setcode do
     value = nil
     Win32::Registry::HKEY_LOCAL_MACHINE.open('SOFTWARE\Puppet Labs\Puppet\RememberInstallDir') do |regkey|
