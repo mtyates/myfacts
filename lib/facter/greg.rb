@@ -3,7 +3,7 @@
 # Notes:
 #   None
 require 'facter'
-Facter.add('custom_fact_Registry') do
+Facter.add('fact_Registry') do
   confine :osfamily => :windows
   setcode do
     value = nil
