@@ -1,11 +1,11 @@
 {
-  "name": "example-custom-facts",
+  "name": "myfacts",
   "version": "0.1.0",
-  "author": "Example",
+  "author": "Matthew Yates",
   "license": "Apache-2.0",
   "summary": "Set of example custom facts",
-  "source": "https://github.com/gregloughmiller2/example-custom-facts",
-  "project_page": "https://github.com/gregloughmiller2/example-custom-facts",
+  "source": "https://github.com/mtyates/myfacts",
+  "project_page": "https://github.com/mtyates/myfacts",
   "dependencies": [
   ]
 }
